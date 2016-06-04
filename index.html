@@ -25,6 +25,7 @@ text {
   shape-rendering: crispEdges;
 }
 
+
 .label {
   fill: #777;
 }
@@ -82,12 +83,12 @@ var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 69.5},
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.linear().domain([0, 3]).range([0, width]),
     yScale = d3.scale.linear().domain([0, 3.5]).range([height, 0]),
-    radiusScale = d3.scale.sqrt().domain([0, 4e7]).range([0, 40]),
+    radiusScale = d3.scale.sqrt().domain([0, 4e6]).range([0, 40]),
     colorScale = d3.scale.category20();
 
 // The x & y axes.
-var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d")),
-    yAxis = d3.svg.axis().scale(yScale).orient("left");
+var xAxis = d3.svg.axis().orient("bottom").scale(xScale).innerTickSize(-height).ticks(12, d3.format(",d")),
+    yAxis = d3.svg.axis().scale(yScale).innerTickSize(-width).orient("left");
 
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
@@ -133,9 +134,7 @@ var label = svg.append("text")
     .text(2005);
 
 // Load the data.
-d3.json("counties.json", function(counties) {
-
-
+d3.json("counties1.json", function(counties) {
 
 
   // A bisector since many nation's data is sparsely-defined.
@@ -228,15 +227,7 @@ d3.json("counties.json", function(counties) {
     label.text(Math.round(year));
   }
 
-  // // Interpolates the dataset for the given (fractional) year.
-  // function interpolateData(year) {
-  //   return counties.map(function(d) {
-  //     return {
-  //       county: d.county,
-  //       felony: d.felony,
-  //       population: d.population,
-  //       misdemeanor: d.misdemeanor
-
+ 
 // Interpolates the dataset for the given (fractional) year.
   function interpolateData(year) {
     return counties.map(function(d) {
