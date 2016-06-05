@@ -6,8 +6,11 @@ import sys, getopt
 
 '''
 
-To run:
-python data_converter.py -i <path to inputfile> -o <path to outputfile>
+To run (from inside this directory):
+python data_converter.py -i ../data/data_clean.csv -o ../data/test.json
+
+(from main directory)
+python scripts/data_converter.py -i data/data_clean.csv -o data/test.json
 
 '''
 

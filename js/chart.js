@@ -65,7 +65,7 @@ var label = svg.append("text")
     .text(2005);
 
 // Load the data.
-d3.json("formatted_counties.json", function(counties) {
+d3.json("../data/formatted_counties.json", function(counties) {
 
 
   // A bisector since many nation's data is sparsely-defined.
