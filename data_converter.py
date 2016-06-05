@@ -2,6 +2,32 @@
 
 import csv
 import json
+import sys, getopt
+
+'''
+
+To run:
+python data_converter.py -i <path to inputfile> -o <path to outputfile>
+
+'''
+
+def main(argv):
+  input_file = ''
+  output_file = ''
+  try:
+      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+  except getopt.GetoptError:
+      print('data_converter.py -i <path to inputfile> -o <path to outputfile>')
+      sys.exit(2)
+  for opt, arg in opts:
+      if opt == '-h':
+          print('data_converter.py -i <path to inputfile> -o <path to outputfile>')
+          sys.exit()
+      elif opt in ("-i", "--ifile"):
+          input_file = arg
+      elif opt in ("-o", "--ofile"):
+          output_file = arg
+  csv_to_json(input_file, output_file)
 
 def csv_to_json(file, json_file):
   csv_rows = []
@@ -30,4 +56,7 @@ def csv_to_json(file, json_file):
 def write_json(data, json_file):
   with open(json_file, "w") as f:
     f.write(json.dumps(data, sort_keys=True, indent=4, separators=(',', ': '),ensure_ascii=False))
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
     
