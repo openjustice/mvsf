@@ -1,10 +1,10 @@
 # Site settings
-title:       Pixyll
+title:       Misdemeanors vs Felonies
 email:       your_email@example.com
-author:      John Otander
+author:      "@openjustice"
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "https://openjustice.github.io/mvsf/"
 date_format: "%b %-d, %Y"
 
 # Google services
