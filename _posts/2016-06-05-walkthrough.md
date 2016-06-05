@@ -5,6 +5,12 @@ date:       2016-06-05
 summary:    Walkthrough of how we came to create this visualization
 ---
 
+This will eventually be a walkthrough of the Misdemeanors vs Felonies visualization:
+
+![screenshot](images/screenshot.png)
+
+---
+
 There is a significant amount of subtle, yet precisely calibrated, styling to ensure
 that your content is emphasized while still looking aesthetically pleasing.
 
