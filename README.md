@@ -19,13 +19,15 @@ County felony and misdemeanor arrest rates are shown relative to California's av
   - Possible ideas:
     1. Color by race: (Downside here is it gets rid of coloring by county)
     ![Race breakdown](http://i.imgur.com/YwRBfWe.png)
-    2. Include Race filters:
+    2. Include race filters:
     ![Race Filter](http://i.imgur.com/UVQoQQk.gif)
-    3. Map Filter?
 1. Add county filter to visualization
   - Similar to race filter, but for counties
+  - Map of California counties filter (may be too small to be useful)
 1. Improve tooltip
   - Tooltip only includes county name
   - Make a tooltip which includes felony, misdemeanor, total arrests, arrests per 100K, population: (example)
   ![Tooltip](http://i.imgur.com/UEAKwmB.png)
+
+In general, these next steps are geared to make our new d3 visualization encompass all the functionality of our old highcharts visualizations as seen at the [open justice website](http://openjustice.doj.ca.gov/agencies/charts). These have Year, County and Race filters.
 
