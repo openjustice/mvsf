@@ -13,7 +13,7 @@ County felony and misdemeanor arrest rates are shown relative to California's av
 
 ## Next Steps
 
-1. Add race dimension to the analysis
+1. Add race dimension to the visualization
   - Currently, the visualization only shows "All Combined" for race
   - New csv in data folder (new_data.csv) includes a race field
   - Possible ideas:
@@ -21,8 +21,10 @@ County felony and misdemeanor arrest rates are shown relative to California's av
     ![Race breakdown](http://i.imgur.com/YwRBfWe.png)
     2. Include Race filters:
     ![Race Filter](http://i.imgur.com/UVQoQQk.gif)
-
-2. Improve tooltip
+    3. Map Filter?
+1. Add county filter to visualization
+  - Similar to race filter, but for counties
+1. Improve tooltip
   - Tooltip only includes county name
   - Make a tooltip which includes felony, misdemeanor, total arrests, arrests per 100K, population: (example)
   ![Tooltip](http://i.imgur.com/UEAKwmB.png)
