@@ -16,6 +16,7 @@ County felony and misdemeanor arrest rates are shown relative to California's av
 1. Add race dimension to the visualization
   - Currently, the visualization only shows "All Combined" for race
   - New csv in data folder (new_data.csv) includes a race field
+    1. This may require a change to the scripts/data_converter.py file to get the race into  the json file the visualization reads from. Unless there is another trick!
   - Possible ideas:
     1. Color by race: (Downside here is it gets rid of coloring by county)
     ![Race breakdown](http://i.imgur.com/YwRBfWe.png)
