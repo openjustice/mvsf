@@ -29,5 +29,5 @@ County felony and misdemeanor arrest rates are shown relative to California's av
   - Make a tooltip which includes felony, misdemeanor, total arrests, arrests per 100K, population: (example)
   ![Tooltip](http://i.imgur.com/UEAKwmB.png)
 
-In general, these next steps are geared to make our new d3 visualization encompass all the functionality of our old highcharts visualizations as seen at the [open justice website](http://openjustice.doj.ca.gov/agencies/charts). These have Year, County and Race filters.
+These improvement are geared to make our new d3 visualization encompass all the functionality of our old highcharts visualizations as seen at the [open justice website](http://openjustice.doj.ca.gov/agencies/charts). These have Year, County and Race filters.
 
