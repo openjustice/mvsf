@@ -1,3 +1,8 @@
+# hide Jekyll stuff in _jekyll/
+layouts_dir: _jekyll/_layouts
+includes_dir: _jekyll/_includes
+destination: _jekyll/_site
+
 # Site settings
 title:       Misdemeanors vs Felonies
 email:       your_email@example.com
@@ -101,6 +106,7 @@ redcarpet:
 permalink:    none
 sass:
   compressed: true
+  sass_dir: _jekyll/_sass
 gems:
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
