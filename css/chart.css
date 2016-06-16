@@ -22,7 +22,8 @@ text {
 }
 
 .year.label {
-  font: 500 196px "Helvetica Neue";
+  color: red;
+  font: 86px "Helvetica Neue";
   fill: #ddd;
 }
 
