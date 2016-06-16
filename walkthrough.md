@@ -226,10 +226,10 @@ d3.json("nations.json", function(nations) {
 The orignal code for the visualization
 
 
-## TO BE CONTINUED
+## Final Visualization
 
-This will eventually be a walkthrough of the Misdemeanors vs Felonies visualization:
+This is the result of all the hard work!
 
 ![screenshot](images/screenshot.png)
 
-It was generated from Markdown, so that's cool!
+[And a link to the interactive version](http://openjustice.github.io/mvsf/)
