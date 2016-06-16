@@ -2,7 +2,7 @@
 layout:     post
 title:      Walkthrough
 date:       2016-06-05
-#Summary:	Walkthrough of how to create such a visualization
+Summary:	Walkthrough of how to create such a visualization
 ---
 
 Are you interested in one of the datasets on the [OpenJustice CA portal][OJ], but you want visualize it differently from their default? This is a walkthrough of how two hackers at the [National Day of Civic Hacking][NDoCH] identified a problem in one of the OpenJustice visualizations, and  created a new, better visualization to improve OpenJustice.
