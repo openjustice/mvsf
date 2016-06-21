@@ -85,8 +85,6 @@ d3.json("data/formatted_counties.json", function(counties) {
       .call(position)
       .sort(order);
 
-  countyNames.sort();
-
   // Add a title.
   dot.append("title")
       .text(function(d) { return d.county; });
@@ -151,6 +149,7 @@ d3.json("data/formatted_counties.json", function(counties) {
   }
 
   // populate county filter select dropdown
+  countyNames.sort();  
   var filterSelect = '<select name="county_name" id="filter-county"><option value="All" selected>All</option>';
   for (var i=0;i < countyNames.length;i++) {
       filterSelect += '<option value="'+countyNames[i]+'">'+countyNames[i]+'</option>';
