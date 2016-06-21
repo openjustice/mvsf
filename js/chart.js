@@ -64,6 +64,8 @@ var label = svg.append("text")
     .attr("x", width)
     .text(2014);
 
+var countyNames = [];
+
 // Load the data.
 d3.json("data/formatted_counties.json", function(counties) {
 
@@ -71,13 +73,13 @@ d3.json("data/formatted_counties.json", function(counties) {
   // A bisector since many nation's data is sparsely-defined.
   var bisect = d3.bisector(function(d) { return d[0]; });
 
-  // Add a dot per datum. Initialize the data at 2005, and set the colors.
+  // Add a dot per datum. set county id, colors, initialize the data at 2005
   var dot = svg.append("g")
       .attr("class", "dots")
     .selectAll(".dot")
       .data(interpolateData(2005))
     .enter().append("circle")
-      .attr("id", function(d) { console.log(d.county.replace(/\s+/g, '')); return d.county.replace(/\s+/g, ''); })
+      .attr("id", function(d) { countyNames.push(d.county); return d.county.replace(/\s+/g, ''); })
       .attr("class", "dot")
       .style("fill", function(d) { return colorScale(color(d)); })
       .call(position)
@@ -146,27 +148,39 @@ d3.json("data/formatted_counties.json", function(counties) {
     }
   }
 
-  // Filter by county
-  var dropDown = d3.select("#filter-county");
+  // populate county filter select dropdown
+  var filterSelect = '<select name="county_name" id="filter-county"><option value="All" selected>All</option>';
+  for (var i=0;i < countyNames.length;i++) {
+      filterSelect += '<option value="'+countyNames[i]+'">'+countyNames[i]+'</option>';
+  }
+  filterSelect += '</select>';
 
+  // insert dropdown into html
+  var filterCounty = document.getElementById('filter-county-span');
+  // $("#filter-county").html(filterSelect);
+  filterCounty.innerHTML = filterSelect;
+
+  // bind dropdown to d3 data
+  var dropDown = d3.select("#filter-county");
   var active = true;
 
   // filter data by county via dropdown
   dropDown.on("change", function() {
       var selected   = this.value;
       var allOpacity = active ? 0 : 1;
-      d3.select("#dropdown-label").text(selected);
+      // d3.select("#dropdown-label").text(selected);
 
+      // toggle county all or single views
       if (selected != "All") {
         svg.selectAll("circle")
           .style("opacity", 0);
         svg.selectAll("circle#"+selected.replace(/\s+/g, ''))
           .style("opacity", 1);
-          active = false;
+        active = false;
       } else {
-        active = true;
         svg.selectAll("circle")
           .style("opacity", 1);
+        active = true;
       }
     })
 
