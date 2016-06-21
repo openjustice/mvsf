@@ -12,20 +12,39 @@
   <a href="https://openjustice.doj.ca.gov" rel="author">DOJ</a>
 </header>
 
-<h1>Misdemeanors vs Felonies 123, Aggregate of all ethnicities for all 58 counties in California</h1>
+<h1>Misdemeanors vs Felonies, Aggregate of all ethnicities for all 58 counties in California</h1>
 
 <p id="chart"></p>
 
 <aside>Mouseover the year to move forward and backwards through time.</aside>
 
-<footer>
+<p>
+  <label for="dropdown-label">
+     County: <span id="dropdown-label">All</span>
+  </label>
+</p>
+<select name="county_name" id="filter-county">
+  <option value="All" selected>All</option>
+  <option value="Alameda">Alameda</option>
+  <option value="Los Angeles">Los Angeles</option>  
+  <option value="San Francisco">San Francisco</option>
+</select>
+
+<p>
+  <label for="slider-year">
+         Year: <span id="slider-year-value"></span>
+  </label>
+</p>
+<input type="range" id="slider-year" min="2005" max="2014"/>
+
+<!-- <footer>
   <aside>June 1, 2016</aside>
   <a href="https://openjustice.doj.ca.gov" rel="author">DOJ</a>
-</footer>
+</footer> -->
 
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script></script>
 <script src='js/chart.js'></script>
-<!-- <script>
+<script>
 
 GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
 ga("create", "UA-48272912-3", "ocks.org");
@@ -33,4 +52,3 @@ ga("send", "pageview");
 
 </script>
 <script async src="//www.google-analytics.com/analytics.js"></script>
- -->
